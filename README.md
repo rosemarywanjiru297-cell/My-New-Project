@@ -1,52 +1,79 @@
 # Pet Classifier: Dog vs Cat
-Building AI Course Project
+Final project for the Building AI course
+
 ## Summary
 
-This project predicts whether an animal is a dog or a cat based on physical attributes such as height, weight, and length. A neural network model is used to classify animals efficiently for shelters and pet owners.
+This project uses artificial intelligence to classify whether an animal is a dog or a cat based on physical features such as height, weight, and length. The model uses a neural network to make predictions and assist in animal identification.
 
 ## Background
 
-The project aims to solve real-world issues in animal care and management:
+This project solves real-world problems related to animal identification:
 
-* Manual classification of pets in shelters is time-consuming and prone to errors.
-* Pet owners may want quick identification of their pet species.
-* Personal motivation: Interested in AI applications for animal welfare and practical classification tasks.
+* Animal shelters may struggle with quick and accurate classification of pets
+* Pet owners may need help identifying animals based on physical traits
+* Manual classification can be time-consuming and prone to human error
+
+My personal motivation is to explore how AI can be used in practical, everyday situations such as animal care and management. This topic is interesting because it shows how simple data can be used to make useful predictions.
 
 ## How is it used?
 
-The solution works as follows:
+The system works by taking measurements of an animal and predicting whether it is a dog or a cat.
 
-1. Collect measurements of the animal: height, weight, length.
-2. Input these values into the classifier.
-3. The neural network outputs the probability of the animal being a dog or a cat.
-4. The user interprets the results for records or recommendations.
+Steps:
+1. The user inputs the animal's height, weight, and length
+2. The AI model processes the input
+3. The system outputs the probability of the animal being a dog or a cat
 
-Users include animal shelter staff, veterinarians, or pet owners. The tool can be deployed on a desktop, web app, or mobile interface for quick access.
+Users:
+* Animal shelter workers
+* Veterinarians
+* Pet owners
 
-![Pet Classifier Diagram](https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg)
+The solution can be used on a computer or mobile device for quick and easy predictions.
+
+![Cat](https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg)
 
 ## Data sources and AI methods
 
-* Data: Open datasets of dog and cat measurements; additional simulated data for training purposes.
-* AI methods: 
-  * Neural network with input nodes for height, weight, and length.
-  * Hidden layer uses sigmoid or ReLU activation functions.
-  * Output layer uses sigmoid for binary classification (dog vs cat).
-* Tools: Python, NumPy, Pandas, TensorFlow/Keras for model training and evaluation.
+The data used in this project is a simple dataset of animal measurements:
 
-Example dataset link: [Open Pet Dataset](https://example.com/dataset)
+* Height
+* Weight
+* Length
+* Label (0 = cat, 1 = dog)
 
-```python
-# Sample code to predict using the trained model
-import tensorflow as tf
-import numpy as np
+The dataset can be manually created or collected from animal shelters.
 
-# Example input: height, weight, length
-animal_features = np.array([[40, 10, 50]])
+AI methods used:
+* Neural networks
+* Logistic regression (as a baseline model)
+* Sigmoid activation function for binary classification
+  
+## Challenges
 
-# Load trained model (assume saved as pet_model.h5)
-model = tf.keras.models.load_model('pet_model.h5')
+This project has some limitations:
 
-# Predict probability
-prob = model.predict(animal_features)
-print(f"Probability of being a dog: {prob[0][0]:.2f}")
+* Small datasets may reduce accuracy
+* Some animals may have similar features, causing misclassification
+* It does not handle mixed breeds or unusual cases well
+
+Ethical considerations:
+* The system should not replace expert judgement
+* Predictions should be used as assistance, not final decisions
+
+## What next?
+
+This project can be improved in several ways:
+
+* Add more features such as fur color, breed, and age
+* Use a larger and more realistic dataset
+* Expand to classify more types of animals
+* Build a mobile or web application for easier access
+
+To move forward, more data, better models, and software development skills will be needed.
+
+## Acknowledgments
+
+* Building AI course by University of Helsinki and Reaktor
+* Inspiration from course materials and exercises
+* Image: Sleeping Cat on Her Back by Umberto Salvagnin / CC BY 2.0
